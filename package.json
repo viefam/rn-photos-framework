@@ -1,39 +1,11 @@
 {
-  "name": "react-native-photos-framework",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/olofd/react-native-photos-framework.git"
+  "name": "@vforvasile/react-native-photos-framework",
+  "version": "1.0.0",
+  "description": "Fork from https://github.com/olofd/react-native-photos-framework with RN 0.59 issue, removed Android script, lib for IOS only",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
   },
-  "version": "1.0.8",
-  "description": "Use Apples Photos Framework with react-native to fetch media from CameraRoll and iCloud",
-  "author": "Olof Dahlbom olof.dahlbom@me.com",
-  "nativePackage": true,
-  "license": "MIT",
-  "homepage": "https://github.com/olofd/react-native-photos-framework",
-  "keywords": [
-    "react-native",
-    "react-native-camera-roll",
-    "Photos Framework",
-    "iCloud",
-    "camera-roll",
-    "cameraroll",
-    "react",
-    "native",
-    "camera",
-    "photo",
-    "code"
-  ],
-  "files": [
-    "LICENSE",
-    "ios/",
-    "src/",
-    "local-cli/",
-    "index.js",
-    "README.md",
-    "install.js",
-    "event-emitter.js",
-    "react-native-photos-framework.podspec"
-  ],
   "scripts": {
     "postinstall": "node install.js",
     "test": "jest",
@@ -56,5 +28,45 @@
       "/example/",
       "local-cli/"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vforvasile/react-native-photos-framework.git"
+  },
+  "keywords": [
+    "album",
+    "photos",
+    "ios",
+    "framework",
+    "pictures",
+    "react-native",
+    "cameraRoll",
+    "iCloud",
+    "react-native-camera-roll",
+    "Photos Framework",
+    "camera-roll",
+    "react",
+    "native",
+    "camera",
+    "photo",
+    "code"
+  ],
+  "files": [
+    "LICENSE",
+    "ios/",
+    "src/",
+    "local-cli/",
+    "index.js",
+    "README.md",
+    "install.js",
+    "event-emitter.js",
+    "react-native-photos-framework.podspec"
+  ],
+  "nativePackage": true,
+  "author": "VforVasile",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vforvasile/react-native-photos-framework/issues"
+  },
+  "homepage": "https://github.com/vforvasile/react-native-photos-framework#readme"
 }
