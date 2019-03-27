@@ -1,6 +1,6 @@
 {
   "name": "@vforvasile/react-native-photos-framework",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fork from https://github.com/olofd/react-native-photos-framework with RN 0.59 issue, removed Android script, lib for IOS only",
   "main": "index.js",
   "directories": {
