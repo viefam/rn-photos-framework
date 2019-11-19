@@ -94,7 +94,7 @@ export default class AlbumList extends Component {
     );
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     simple_timer.start('first_album_fetch');
     RNPhotosFramework
       .requestAuthorization()
@@ -141,7 +141,7 @@ export default class AlbumList extends Component {
     );
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (this.props.edit !== nextProps.edit && nextProps.edit) {
       Actions.refresh({
         renderRightButton: this

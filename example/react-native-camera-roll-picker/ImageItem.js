@@ -15,7 +15,7 @@ class ImageItem extends Component {
     this.state = { videoPaused: true };
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     var {width} = Dimensions.get('window');
     var {imageMargin, imagesPerRow, containerWidth} = this.props;
 

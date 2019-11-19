@@ -30,7 +30,7 @@ class CameraRollPicker extends Component {
     };
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.setState({ selected: nextProps.selected });
     if (nextProps.album !== this.props.album) {
       this.setState({
@@ -55,7 +55,7 @@ class CameraRollPicker extends Component {
     }
   }
 
-  componentWillMount() {
+  UNSAFE_componentWillMount() {
     this.fetch();
     this.unsubscribe = this
       .props

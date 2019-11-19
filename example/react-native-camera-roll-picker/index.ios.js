@@ -121,7 +121,7 @@ export default class ReactNativeCameraRollPicker extends Component {
     });
   }
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     if (this.props.edit !== nextProps.edit) {
       Actions.refresh({
         renderRightButton: this
