@@ -19,4 +19,4 @@ or
 `react-native link @vforvasile/react-native-photos-framework` and remove Android linking afterwards
 
 **Original documentation below**
-[react-native-photos-framework](./docs/HowToUse.md)
+[Guide](./docs/HowToUse.md)
