@@ -1,5 +1,6 @@
 #import <React/RCTConvert.h>
-#import <React/RCTImageLoaderProtocol.h>
+#import <React/RCTBridge.h>
+#import <React/RCTImageLoader.h>
 #import <React/RCTLog.h>
 #import <React/RCTUtils.h>
 #import <React/RCTProfile.h>
@@ -23,11 +24,22 @@
 
 @import Photos;
 
-@implementation RNPFManager
+@implementation RNPFManager {
+    __weak RCTBridge* _bridge;
+}
+
+- (instancetype)initWithBridge:(RCTBridge*)bridge
+{
+    if ((self = [super init])) {
+        _bridge = bridge;
+    }
+
+    return self;
+}
 
 RCT_EXPORT_MODULE()
 
-@synthesize bridge = _bridge;
+//@synthesize bridge = _bridge;
 
 
 NSString *const RNPHotoFrameworkErrorUnableToLoad = @"RNPHOTOSFRAMEWORK_UNABLE_TO_LOAD";
@@ -638,7 +650,7 @@ andProgressBlock:(fileDownloadProgressBlock)progressBlock {
         [self saveVideo:request.source toAlbum:collectionLocalIdentifier andCompleteBLock:completeBlock andProgressBlock:progressBlock];
     } else if([request.type isEqualToString:@"image"]) {
         NSURLRequest *url = [RCTConvert NSURLRequest:request.source.uri];
-        [[self.bridge moduleForName:@"ImageLoader" lazilyLoadIfNecessary:YES] loadImageWithURLRequest:url
+        [[_bridge moduleForClass:[RCTImageLoader class]] loadImageWithURLRequest:url
                                                     size:CGSizeZero
                                                    scale:1
                                                  clipped:YES
@@ -905,7 +917,7 @@ RCT_EXPORT_METHOD(removeAssetsFromAlbum:(NSDictionary *)params
     NSURLComponents *components = [[NSURLComponents alloc] initWithURL:imageURLRequest.URL resolvingAgainstBaseURL:NO];
     components.queryItems = [self parseParamsToImageLoaderQueryOptions:params];
     
-    return [[self.bridge moduleForName:@"ImageLoader" lazilyLoadIfNecessary:YES] loadImageWithURLRequest:[NSURLRequest requestWithURL:components.URL]
+    return [[_bridge moduleForClass:[RCTImageLoader class]] loadImageWithURLRequest:[NSURLRequest requestWithURL:components.URL]
                                                 size:size
                                                scale:scale
                                              clipped:clipped
