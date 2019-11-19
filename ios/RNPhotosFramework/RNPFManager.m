@@ -1,5 +1,5 @@
 #import <React/RCTConvert.h>
-#import <React/RCTImageLoader.h>
+#import <React/RCTImageLoaderProtocol.h>
 #import <React/RCTLog.h>
 #import <React/RCTUtils.h>
 #import <React/RCTProfile.h>
@@ -23,20 +23,12 @@
 
 @import Photos;
 
-@implementation RNPFManager {
+@implementation RNPFManager
 
-    __weak RCTBridge* _bridge;
-}
-
-- (instancetype)initWithBridge:(RCTBridge*)bridge
-{
-    if ((self = [super init])) {
-        _bridge = bridge;
-    }
-
-    return self;
-}
 RCT_EXPORT_MODULE()
+
+@synthesize bridge = _bridge;
+
 
 NSString *const RNPHotoFrameworkErrorUnableToLoad = @"RNPHOTOSFRAMEWORK_UNABLE_TO_LOAD";
 NSString *const RNPHotoFrameworkErrorUnableToSave = @"RNPHOTOSFRAMEWORK_UNABLE_TO_SAVE";
