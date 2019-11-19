@@ -634,7 +634,7 @@ andProgressBlock:(fileDownloadProgressBlock)progressBlock {
         [self saveVideo:request.source toAlbum:collectionLocalIdentifier andCompleteBLock:completeBlock andProgressBlock:progressBlock];
     } else if([request.type isEqualToString:@"image"]) {
         NSURLRequest *url = [RCTConvert NSURLRequest:request.source.uri];
-        [[_bridge moduleForClass:[RCTImageLoader class]] loadImageWithURLRequest:url
+        [[self->_bridge moduleForClass:[RCTImageLoader class]] loadImageWithURLRequest:url
                                                     size:CGSizeZero
                                                    scale:1
                                                  clipped:YES
@@ -901,7 +901,7 @@ RCT_EXPORT_METHOD(removeAssetsFromAlbum:(NSDictionary *)params
     NSURLComponents *components = [[NSURLComponents alloc] initWithURL:imageURLRequest.URL resolvingAgainstBaseURL:NO];
     components.queryItems = [self parseParamsToImageLoaderQueryOptions:params];
     
-    return [[_bridge moduleForClass:[RCTImageLoader class]] loadImageWithURLRequest:[NSURLRequest requestWithURL:components.URL]
+    return [[self->_bridge moduleForClass:[RCTImageLoader class]] loadImageWithURLRequest:[NSURLRequest requestWithURL:components.URL]
                                                 size:size
                                                scale:scale
                                              clipped:clipped
