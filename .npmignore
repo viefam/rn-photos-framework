@@ -8,7 +8,7 @@
 node_modules/
 npm-debug.log
 yarn-error.log
-
+yarn.lock
 
 # Xcode
 #
@@ -50,3 +50,4 @@ ios/Carthage/Checkouts
 assets/
 tsconfig.json
 .vscode
+.gitignore
