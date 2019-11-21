@@ -1,13 +1,10 @@
 {
-  "name": "@vforvasile/react-native-photos-framework",
-  "version": "1.0.2",
-  "description": "Fork from https://github.com/olofd/react-native-photos-framework with RN 0.59 issue, removed Android script, lib for IOS only",
+  "name": "rn-photos-framework",
+  "version": "1.0.0",
+  "description": "Fork from https://github.com/olofd/react-native-photos-framework with RN 0.60+ issue, removed Android script, lib for IOS only",
   "main": "index.js",
   "directories": {
     "test": "test"
-  },
-  "scripts": {
-    "update-small": "git add . && git commit -m \"Updated\" && git push origin master"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
@@ -27,7 +24,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vforvasile/react-native-photos-framework.git"
+    "url": "git+https://github.com/vforvasile/rn-photos-framework.git"
   },
   "keywords": [
     "album",
@@ -62,7 +59,7 @@
   "author": "VforVasile",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/vforvasile/react-native-photos-framework/issues"
+    "url": "https://github.com/vforvasile/rn-photos-framework/issues"
   },
-  "homepage": "https://github.com/vforvasile/react-native-photos-framework#readme"
+  "homepage": "https://github.com/vforvasile/rn-photos-framework#readme"
 }

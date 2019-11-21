@@ -331,7 +331,7 @@
 
 +(void)updateAssetWithParams:(NSDictionary *)params completionBlock:(void(^)(BOOL success, NSError * _Nullable error, NSString * _Nullable localIdentifier))completionBlock andAsset:(PHAsset *)asset {
     if(!params || !asset) {
-        return completionBlock(NO, [NSError errorWithDomain:@"react-native-photos-framework" code:1 userInfo:@{@"info" : @"[updateAssetWithParams] params or asset was nil"}], asset.localIdentifier);
+        return completionBlock(NO, [NSError errorWithDomain:@"rn-photos-framework" code:1 userInfo:@{@"info" : @"[updateAssetWithParams] params or asset was nil"}], asset.localIdentifier);
     }
     BOOL runUpdate = NO;
     BOOL updateHidden = NO;

@@ -8,15 +8,23 @@ RN 0.60+
 
 **Updated instructions:**
 
-`npm i @vforvasile/react-native-photos-framework --save`
+Automatic:
+
+`npm i --save rn-photos-framework`
+
+then
+
+`react-native link rn-photos-framework` and remove Android linking afterwards
+
+Manually:
+
+In package.json add:
+
+`"rn-photos-framework": "vforvasile/rn-photos-framework",`
 
 Add to your Podfile in ios/Podfile:
 
-`pod 'react-native-photos-framework', :path => '../node_modules/@vforvasile/react-native-photos-framework'`
+`pod 'rn-photos-framework', :path => '../node_modules/rn-photos-framework'`
 
-or
-
-`react-native link @vforvasile/react-native-photos-framework` and remove Android linking afterwards
-
-**Original documentation below**
+**Original documentation:**
 [Guide](./docs/HowToUse.md)
