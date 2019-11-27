@@ -20,20 +20,8 @@
 #import "PHCache.h"
 #import "RCTImageResizer.h"
 #import "PHVideoExporter.h"
-
-#if __has_include(<React/RCTBridgeModule.h>)
-#import <React/RCTBridgeModule.h>
-#import <React/RCTImageURLLoader.h>
-#import <React/RCTImageShadowView.h>
-#import <React/RCTImageView.h>
 #import <React/RCTImageLoaderProtocol.h>
-#else
-#import "RCTBridgeModule.h"
-#import "RCTImageURLLoader.h"
-#import "RCTImageShadowView.h"
-#import "RCTImageView.h"
-#import "RCTImageLoaderProtocol.h"
-#endif
+
 
 @import Photos;
 
@@ -41,7 +29,7 @@
 
 RCT_EXPORT_MODULE()
 
-@synthesize bridge = _bridge;
+// @synthesize bridge = _bridge;
 
 
 NSString *const RNPHotoFrameworkErrorUnableToLoad = @"RNPHOTOSFRAMEWORK_UNABLE_TO_LOAD";
