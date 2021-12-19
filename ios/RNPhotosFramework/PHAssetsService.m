@@ -148,15 +148,20 @@
         if(mimeTypeCString != nil) {
             mimeType = (__bridge NSString *)(mimeTypeCString);
         }
+            
+        NSMutableDictionary *dictObject = [[NSMutableDictionary alloc] init];
+        [dictObject setValue:resourceMetadata.originalFilename forKey:@"originalFilename"];
+        [dictObject setValue:resourceMetadata.assetLocalIdentifier forKey:@"assetLocalIdentifier"];
+        [dictObject setValue:resourceMetadata.uniformTypeIdentifier forKey:@"uniformTypeIdentifier"];
+        [dictObject setValue:mimeType forKey:@"mimeType"];
+        [dictObject setValue:[resourceMetadata.originalFilename pathExtension] forKey:@"fileExtension"];
         
-        [arrayWithResourcesMetadata addObject:@{
-                                                     @"originalFilename" : resourceMetadata.originalFilename,
-                                                     @"assetLocalIdentifier" : resourceMetadata.assetLocalIdentifier,
-                                                     @"uniformTypeIdentifier" : resourceMetadata.uniformTypeIdentifier,
-                                                     @"type" : [[RCTConvert PHAssetResourceTypeValuesReversed] objectForKey:@(resourceMetadata.type)],
-                                                     @"mimeType" : mimeType,
-                                                     @"fileExtension" : [resourceMetadata.originalFilename pathExtension]
-                                                     }];
+        if([[RCTConvert PHAssetResourceTypeValuesReversed] objectForKey:@(resourceMetadata.type)] != nil){
+            [dictObject
+             setValue:[[RCTConvert PHAssetResourceTypeValuesReversed] objectForKey:@(resourceMetadata.type)]
+             forKey:@"type"];
+        }
+        [arrayWithResourcesMetadata addObject:dictObject];
     }
 
     [dictToExtend setObject:arrayWithResourcesMetadata forKey:@"resourcesMetadata"];
