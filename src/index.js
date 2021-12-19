@@ -44,7 +44,7 @@ class RNPhotosFramework {
     ).filter(method => methodsWithoutCacheCleanBlock.indexOf(method) === -1);
     methodNames.forEach(methodName => {
       const originalMethod = this[methodName];
-      this[methodName] = function(...args) {
+      this[methodName] = function (...args) {
         if (!this.libraryStartupPromise) {
           this.libraryStartupPromise = this.libraryStartup();
         }
@@ -57,6 +57,10 @@ class RNPhotosFramework {
 
   onLibraryChange(cb) {
     return eventEmitter.addListener("onLibraryChange", cb);
+  }
+
+  removeLibraryChangeListener(cb) {
+    return eventEmitter.removeListener("onLibraryChange", cb)
   }
 
   libraryStartup() {
